@@ -12,7 +12,7 @@
 #   port                   = 3306
 #   vpc_security_group_ids = [aws_security_group.db-sg.id]
 #   multi_az = true
-#   db_subnet_group_name  =  aws_subnet.db_subnet[*].name
+#   db_subnet_group_name  =  aws_subnet.db_subnet[0].name
 # }
 
 # # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance#vpc_security_group_ids

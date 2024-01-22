@@ -1,4 +1,3 @@
-
 # resource "aws_autoscaling_group" "asg" {
 #  #   availability_zones = ["us-east-1a", "us-east-1b"]
 
@@ -16,7 +15,7 @@
 #     value               = "Team-1"
 #     propagate_at_launch = true
 #   }
-#   depends_on = [ aws_nat_gateway.natgw ]
+#   depends_on = [ aws_nat_gateway.natgw1, aws_nat_gateway.natgw2 ]
 #  }
 
 #  # Create a new ALB Target Group attachment
