@@ -33,7 +33,7 @@
 #   # count = var.publicSubnetCount
 #   subnets            = aws_subnet.public[*].id
 
-#   enable_deletion_protection = true
+#   enable_deletion_protection = false
 
 #   tags = {
 #     Environment = "production"

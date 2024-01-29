@@ -1,7 +1,7 @@
 # ### Launch Template ###
 # resource "aws_launch_template" "asg-lt" {
 #   iam_instance_profile {
-#     arn = "arn:aws:iam::782863115905:instance-profile/S3-role" # may need to change role 
+#     arn = "arn:aws:iam::782863115905:instance-profile/S3-role" 
 #   }
 #   image_id = "ami-0e9107ed11be76fde"
 #   instance_type = "t3.small"
@@ -23,5 +23,5 @@
 #       Name = "Team1-LT"
 #     }
 #   }
-#   user_data = filebase64("${path.module}/script.sh")
+#   user_data = filebase64("${path.module}/wordpress.sh")
 # }
