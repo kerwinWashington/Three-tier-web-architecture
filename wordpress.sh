@@ -1,12 +1,12 @@
 #!/bin/bash -xe
 DB_NAME=WPDatabase
-DB_HOSTNAME=mydbcluster.cluster-c5aoa3qahvn8.us-east-2.rds.amazonaws.com
+DB_HOSTNAME=teamonedbcluster.cluster-ckkhag7mpnl6.us-east-1.rds.amazonaws.com
 DB_USERNAME="admin"
 DB_PASSWORD="plIbuNmFvHxo"
 WP_ADMIN=wpadmin
 WP_PASSWORD="plIbuNmFvHxo"
 WP_EMAIL=kerwin.washington@yahoo.com
-LB_HOSTNAME=LabALB-981800218.us-east-2.elb.amazonaws.com
+LB_HOSTNAME=Team1-lb-32521039.us-east-1.elb.amazonaws.com
 yum update -y
 yum install -y amazon-linux-extras
 yum install -y awslogs httpd mysql gcc-c++
@@ -16,7 +16,8 @@ yum install -y php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,
 systemctl enable nfs-server.service
 systemctl start nfs-server.service
 mkdir -p /var/www/wordpress
-mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-04d274f2ddaa0dc76.efs.us-east-2.amazonaws.com:/ /var/www/wordpress
+mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-04c8566e0df7c5a9b.efs.us-east-1.amazonaws.com:/ /var/www/wordpress
+
 
 ## create site config
 cat <<EOF >/etc/httpd/conf.d/wordpress.conf
@@ -77,3 +78,4 @@ fi
 
 chkconfig httpd on
 service httpd start
+
