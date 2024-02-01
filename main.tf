@@ -151,13 +151,3 @@ resource "aws_route_table_association" "db_subnet-rt-2" {
   route_table_id = aws_route_table.db_subnet_2.id
 }
 
-resource "aws_db_subnet_group" "default" {
-  name  = "aurorasubnetgroupteamone"
-  # count = var.privateSubnetCount
-  #   vpc_id     = aws_vpc.main.id
-  subnet_ids = [aws_subnet.db_subnet[0].id, aws_subnet.db_subnet[1].id]
-
-  tags = {
-    Name = "My DB subnet group"
-  }
-}
